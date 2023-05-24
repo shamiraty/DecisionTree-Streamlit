@@ -86,11 +86,17 @@ fig_investment.update_layout(
 
 
 try:
-
- with st.expander("Tabular"):
-  #st.dataframe(df_selection,use_container_width=True)
-  shwdata = st.multiselect('Filter :', df_selection.columns, default=["Location","State","Region","Investment","Construction","BusinessType"])
-  st.dataframe(df_selection[shwdata],use_container_width=True
+  p1,p2=columns(2)
+  with p1:
+   with st.expander("Tabular"):
+   #st.dataframe(df_selection,use_container_width=True)
+   shwdata = st.multiselect('Filter :', df_selection.columns, default=["Location","State","Region","Investment","Construction","BusinessType"])
+   st.dataframe(df_selection[shwdata],use_container_width=True
+  with p2:
+   fig = px.pie(df_selection, values='Investment', names='State', title='Regions by Ratings')
+   fig.update_layout(legend_title="Regions", legend_y=0.9)
+   fig.update_traces(textinfo='percent+label', textposition='inside')
+   st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)              
   )
 
  df_selection['State'].replace(['Dodoma','Kigoma','Iringa','Mwanza','Dar es Salaam','Kilimanjaro','Arusha'],[1,2,3,4,5,6,7],inplace=True)
