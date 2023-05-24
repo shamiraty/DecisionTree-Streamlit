@@ -117,7 +117,7 @@ try:
   new_user=clf.predict([[df_selection["State"].unique(),df_selection["Location"].unique(),df_selection["Region"].unique(),0,df_selection["Construction"].unique()]]) 
   st.write("Recommended Facility")
   st.info(",".join(new_user))
-# st.plotly_chart(fig_investment,use_container_width=False,theme="streamlit") 
+ st.plotly_chart(fig_investment,use_container_width=False,theme="streamlit") 
 
 except:
      st.info("One of selection is Required")
