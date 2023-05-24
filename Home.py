@@ -18,7 +18,7 @@ st.markdown("##")
  
 
 result = view_all_data()
-df = pd.read_excel("data.xlsx")
+df = pd.read_excel("data.xlsx"sheetname="Sheet1")
 
 
 #----GET DATA----
