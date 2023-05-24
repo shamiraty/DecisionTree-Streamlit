@@ -16,14 +16,12 @@ st.subheader("❔ Loan Prediction")
 st.markdown("##")
  
  
+#for database use these two commented lines
+#result = view_all_data()
+#df = pd.DataFrame(result,columns=["Policy","Expiry","Location","State","Region","Investment","Construction","BusinessType","Earthquake","Flood","Rating","id"])
 
-result = view_all_data()
-df = pd.read_excel("data.xlsx"sheetname="Sheet1")
-
-
-#----GET DATA----
- 
- 
+#for excel use this line
+df=pd.read_excel('data.xlsx', sheet_name='Sheet1')
 
 #st.sidebar.image("data/logo1.png",caption="Online Analytical")
 
