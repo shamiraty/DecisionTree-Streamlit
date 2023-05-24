@@ -18,7 +18,7 @@ st.markdown("##")
  
 
 result = view_all_data()
-df = pd.DataFrame(result,columns=["Location","State","Region","Investment","Construction","BusinessType"])
+df = pd.read_excel("data.xlsx")
 
 
 #----GET DATA----
