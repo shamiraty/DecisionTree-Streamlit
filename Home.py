@@ -5,7 +5,7 @@ import plotly.express as px
 import time
 from streamlit_option_menu import option_menu
 from numerize.numerize import numerize
-from query import * 
+#from query import * 
 
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
