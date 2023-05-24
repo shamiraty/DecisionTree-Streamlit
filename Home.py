@@ -80,16 +80,14 @@ fig_investment.update_layout(
      )
  
 
- 
- 
-
 
 
 try:
-   with st.expander("Tabular"):
-    #st.dataframe(df_selection,use_container_width=True)
-    shwdata = st.multiselect('Filter :', df_selection.columns, default=["Location","State","Region","Investment","Construction","BusinessType"])
-    st.dataframe(df_selection[shwdata],use_container_width=True)
+ with st.expander("Tabular"):
+  #st.dataframe(df_selection,use_container_width=True)
+  shwdata = st.multiselect('Filter :', df_selection.columns, default=["Location","State","Region","Investment","Construction","BusinessType"])
+  st.dataframe(df_selection[shwdata],use_container_width=True
+  )
  
  df_selection['State'].replace(['Dodoma','Kigoma','Iringa','Mwanza','Dar es Salaam','Kilimanjaro','Arusha'],[1,2,3,4,5,6,7],inplace=True)
  df_selection['Location'].replace(['Urban','Rural'],[1,2],inplace=True)
